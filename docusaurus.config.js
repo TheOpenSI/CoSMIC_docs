@@ -28,7 +28,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'TheOpenSI', // Usually your GitHub org/user name.
-  projectName: 'CoSMIC', // Usually your repo name.
+  projectName: 'CoSMIC_docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 

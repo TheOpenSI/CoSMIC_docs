@@ -10,7 +10,7 @@ sidebar_label: Using CoSMIC
 
 Send a question, and CoSMIC processes it and returns a response.
 
-Each request carries your recent conversation history (the last 5 user/assistant pairs) along with the new question, so CoSMIC has short-term context for follow-up questions — see [Context Management](../core-concepts/context-management.md) for details and limits.
+Each request carries your recent conversation history (the last 5 user/assistant pairs) along with the new question, so CoSMIC has short-term context for follow-up questions — see [Context Management](../03-core-concepts/context-management.md) for details and limits.
 
 ## Query Processing
 
@@ -27,7 +27,7 @@ When a question is submitted, CoSMIC doesn't send it straight to a language mode
 
 **Note:** "memory" here means writing text into the knowledge store for later retrieval — it's separate from the short-term conversation history CoSMIC already keeps automatically for follow-up questions.
 
-This classification happens automatically for every message — see [Query Analysis & Service Routing](../core-concepts/query-routing.md) for how it works.
+This classification happens automatically for every message — see [Query Analysis & Service Routing](../03-core-concepts/query-routing.md) for how it works.
 
 ## Knowledge Retrieval (RAG)
 
@@ -41,7 +41,7 @@ There are two ways content gets added: direct upload, for your own conversation 
 
 **Querying documents** — Once added, relevant content is automatically retrieved and used as context whenever you ask a related question — no special syntax needed, this happens as part of normal chat.
 
-**A note on relevance** — retrieval normally uses content that meets the configured relevance threshold. If no result meets that threshold, CoSMIC can retain the best available result rather than returning no context. If a document was added successfully but doesn't seem to be reflected well in an answer, it may be because the way the question was phrased didn't score as highly against the stored content as other candidates — see [Vector Databases](../core-concepts/vector-databases.md) and [Retrieval-Augmented Generation](../core-concepts/rag.md).
+**A note on relevance** — retrieval normally uses content that meets the configured relevance threshold. If no result meets that threshold, CoSMIC can retain the best available result rather than returning no context. If a document was added successfully but doesn't seem to be reflected well in an answer, it may be because the way the question was phrased didn't score as highly against the stored content as other candidates — see [Vector Databases](../03-core-concepts/vector-databases.md) and [Retrieval-Augmented Generation](../03-core-concepts/rag.md).
 
 ## Code Generation
 
