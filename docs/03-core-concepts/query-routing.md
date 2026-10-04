@@ -25,7 +25,6 @@ Selected CoSMIC Service
 Response
 ```
 
-
 Unlike a fixed list of options, the services available for routing aren't hardcoded — they're fetched from a live list of active services each time. Confirmed services in the current codebase:
 
 | Service | Purpose |
@@ -34,9 +33,9 @@ Unlike a fixed list of options, the services available for routing aren't hardco
 | Chess | Predicts the next move from a FEN position or a move sequence |
 | Save to memory | Writes text into the knowledge store |
 | Code generation | Generates or improves code |
-| General question answering | Retrieves relevant stored content and answers using it |
-| Fallback | Used when no other service can handle the request |
+| Academic Governance | Answers academic governance questions using retrieved documents |
+| General question answering (Fallback) | Answers any request that doesn't match another service |
 
-The Query Analyser works by asking its LLM to pick one of these services and respond with just that choice — no explanation. That response is then read to figure out which service was selected. If the response doesn't clearly indicate a valid service, the request falls back to the general fallback response instead.
+The Query Analyser works by asking its LLM to pick one of these services and respond with just that choice — no explanation. That response is then read to figure out which service was selected. If the response doesn't clearly indicate a valid service, the request falls back to general question answering instead.
 
 For chess and memory-update requests, the analyser does additional parsing on its own — pulling out FEN positions, move sequences, file paths, or quoted text from the request — after the initial service is selected.
