@@ -69,7 +69,7 @@ Before you begin, ensure you have **Docker** & **Docker Compose** installed:
 
 ### **1. Starting Docker Services**
 
-From the project root directory, ensure you've completed  the steps in the [Docker Configuration](#docker-configuration) section above. Then start all the service using the Docker Compose file:
+From the project root directory, start all the services using the Docker Compose file:
 
 ```bash
 # Linux/MacOS
@@ -131,7 +131,7 @@ yarn install
 
 ### **2. Starting Frontend Server**
 
-After dependencies are installed, ensure you've completed the steps from the [Native Configuration](#native-configuration) section above. Then start the Vite development server:
+After dependencies are installed, start the Docusaurus development server:
 
 ```bash
 # Linux/MacOS
