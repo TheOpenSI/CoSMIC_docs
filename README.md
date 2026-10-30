@@ -1,20 +1,157 @@
-# Website
+# Quick Start
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Before setting up, ensure you have the appropriate tools installed depending on your chosen setup method. This guide supports:
 
-## Installation
+> [!NOTE]
+> The rest of this guide covers **Purpose 1**. For **Purpose 2**, refer to the
+> setup instructions in [cosmic-docker repository](https://github.com/TheOpenSI/cosmic-docker)
+
+1. **Module-only**: you are working on this part of the project in isolation (e.g., only CoSMIC Docs).
+2. **Full-stack**: you need an end-to-end test run across all services (**Front-end** &rarr; **Back-end** &rarr; **CoSMIC** &rarr; **CoSMIC Docs** _(optionally)_).
+
+Next, ensure you have the appropriate tools installed depending on your chosen execution method. This guide supports:
+
+- **Native setup** (running **CoSMIC Docs** directly on your machine)
+- **Docker setup** (running **CoSMIC Docs** in isolated containers)
+
+
+| **Tool** | **Docker Setup**                       | **Native Setup**                                |
+| -------- | -------------------------------------- | ----------------------------------------------- |
+| Docker   | $\textcolor{green}{\text{Mandatory}}$  | $\textcolor{red}{\text{Not required}}$          |
+| Node.js  | $\textcolor{red}{\text{Not required}}$ | $\textcolor{green}{\text{Mandatory (v26+)}}$ |
+| yarn     | $\textcolor{red}{\text{Not required}}$ | $\textcolor{green}{\text{Mandatory (v4+)}}$     |
+
+
+Then, start by cloning the repository using your preferred method:
 
 ```bash
-yarn
+# Linux/MacOS
+git clone https://github.com/TheOpenSI/CoSMIC_docs.git    # Using HTTPS (recommended for most users)
+git clone git@github.com:TheOpenSI/CoSMIC_docs.git        # Using SSH (recommended if you've SSH keys configured)
+```
+```ps1
+# Windows
+git clone https://github.com/TheOpenSI/CoSMIC_docs.git    # Using HTTPS (recommended for most users)
+git clone git@github.com:TheOpenSI/CoSMIC_docs.git        # Using SSH (recommended if you've SSH keys configured)
 ```
 
-## Local Development
+Once cloned, navigate to the project root directory:
 
 ```bash
-yarn start
+# Linux/MacOS
+cd CoSMIC_docs/
+```
+```ps1
+# Windows
+Set-Location CoSMIC_docs\
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+---
+# Setup & Execution
+
+> [!TIP]
+> Docker provides an isolated environment where the frontend runs in a container.
+> This approach is recommended if you want a consistent environment without
+> installing Node.js dependencies directly on your machine.
+
+## Docker Setup
+
+> [!NOTE]
+> It's possible to run Docker in rootless mode on Linux. However, the way to set
+> it up differs across Linux distros. Please refer to [this](https://docs.docker.com/engine/install) and [this](https://docs.docker.com/engine/security/rootless/)
+> (both sourced from Docker documentation) to choose the one that fits your
+> current Linux distro.
+
+Before you begin, ensure you have **Docker** & **Docker Compose** installed:
+
+1. [**Docker**](https://docs.docker.com/get-docker/)
+2. [**Docker Compose**](https://docs.docker.com/compose/install/)
+
+### **1. Starting Docker Services**
+
+From the project root directory, start all the services using the Docker Compose file:
+
+```bash
+# Linux/MacOS
+docker compose up --build -d    # Refer to NOTE above if running in rootless mode
+```
+```ps1
+# Windows
+docker compose up --build -d    # Docker runs through a lightweight Linux VM on Windows, so it's rootless by default
+```
+
+### **2. Verifying Docker Services**
+
+Once the container is running, verify the site is working at the root path:
+
+1. **Docusaurus**: [localhost:3001](http://localhost:3001)
+
+## Native Setup
+
+> [!IMPORTANT]
+> This project uses latest Yarn version (v4). Also, recent Node releases no longer
+> bundle Corepack, so if `yarn --version` doesn't report a `4.x` version, install
+> it through Corepack:
+>
+> ```bash
+> npm install --global corepack@latest    # only needed when Corepack isn't available
+> corepack enable yarn
+> corepack install                        # installs the version pinned in `package.json`
+> ```
+
+Before you begin, ensure you have `Node.js (v26+)` and `yarn (v4+)` installed on your system:
+
+```bash
+# Linux/MacOS
+node --version
+yarn --version
+```
+```ps1
+# Windows
+node --version
+yarn --version
+```
+
+### **1. Installing Dependencies**
+
+From the project root directory, install the project's dependencies using `yarn` package manager:
+
+```bash
+# Linux/MacOS
+yarn install
+```
+```ps1
+# Windows
+yarn install
+```
+
+### **2. Starting Frontend Server**
+
+After dependencies are installed, start the Docusaurus development server:
+
+```bash
+# Linux/MacOS
+yarn dev
+```
+```ps1
+# Windows
+yarn dev
+```
+
+### **3. Verifying Native Setup**
+
+You can now verify the site is running at the root path:
+
+1. **Docusaurus**: [localhost:3001](http://localhost:3001)
+
+---
+# Deployment
+
+> [!NOTE]
+> This section is generated by Docusaurus when first initiate the project using
+> their `docusaurus` CLI commands. While it's running as expected, a tailored
+> version of this section will be done later on when we moving toward a new
+> production release.
 
 ## Build
 
