@@ -82,7 +82,7 @@ docker compose up --build -d    # Docker runs through a lightweight Linux VM on 
 
 ### **2. Verifying Docker Services**
 
-Once the container is running, verify the frontend is working:
+Once the container is running, verify the site is working at the root path:
 
 1. **Docusaurus**: [localhost:3001](http://localhost:3001)
 
@@ -144,7 +144,7 @@ yarn dev
 
 ### **3. Verifying Native Setup**
 
-You can now verify the frontend is running correctly:
+You can now verify the site is running at the root path:
 
 1. **Docusaurus**: [localhost:3000](http://localhost:3000)
 

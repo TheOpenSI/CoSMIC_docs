@@ -21,9 +21,9 @@ const config = {
 
   // Set the production url of your site here
   url: 'https://theopensi.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/CoSMIC_docs/',
+  // Serve from the root. Docusaurus still requires this field, but `/` is its
+  // default value (e.g. http://localhost:3000/ in native development).
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
