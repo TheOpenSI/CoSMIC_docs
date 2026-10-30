@@ -19,7 +19,7 @@ Next, ensure you have the appropriate tools installed depending on your chosen e
 | -------- | -------------------------------------- | ----------------------------------------------- |
 | Docker   | $\textcolor{green}{\text{Mandatory}}$  | $\textcolor{red}{\text{Not required}}$          |
 | Node.js  | $\textcolor{red}{\text{Not required}}$ | $\textcolor{green}{\text{Mandatory (v24.15+)}}$ |
-| yarn     | $\textcolor{red}{\text{Not required}}$ | $\textcolor{green}{\text{Mandatory (latest)}}$  |
+| yarn     | $\textcolor{red}{\text{Not required}}$ | $\textcolor{green}{\text{Mandatory (v4+)}}$     |
 
 
 Then, start by cloning the repository using your preferred method:
@@ -100,6 +100,17 @@ yarn --version
 node --version
 yarn --version
 ```
+
+> [!NOTE]
+> This project uses Yarn 4. Recent Node.js releases no longer bundle Corepack,
+> so if `yarn --version` doesn't report a `4.x` version, install it through
+> Corepack:
+>
+> ```bash
+> npm install --global corepack@latest    # only needed when Corepack isn't available
+> corepack enable
+> corepack install                        # installs the version pinned in package.json
+> ```
 
 ### **1. Installing Dependencies**
 

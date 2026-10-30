@@ -10,3 +10,8 @@ CONTRIBUTING
 !LICENSE
 *compose.yaml*
 *compose.yml*
+
+# Local caches and generated output
+.docusaurus/
+.yarn/
+build/
