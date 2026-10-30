@@ -26,7 +26,7 @@ services:
       - name: cosmic-docusaurus-webpack
         target: 3000
         host_ip: 127.0.0.1
-        published: "3000"
+        published: "3001"
         protocol: tcp
         app_protocol: http
         mode: host

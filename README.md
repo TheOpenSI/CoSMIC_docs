@@ -84,7 +84,11 @@ docker compose up --build -d    # Docker runs through a lightweight Linux VM on 
 
 Once the container is running, verify the frontend is working:
 
-1. **Docusaurus**: [localhost:3000](http://localhost:3000)
+1. **Docusaurus**: [localhost:3001](http://localhost:3001)
+
+> [!NOTE]
+> The Docusaurus server listens on port `3000` inside the container, and
+> Compose publishes it on host port `3001`.
 
 ## Native Setup
 
