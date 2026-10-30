@@ -18,7 +18,7 @@ Next, ensure you have the appropriate tools installed depending on your chosen e
 | **Tool** | **Docker Setup**                       | **Native Setup**                                |
 | -------- | -------------------------------------- | ----------------------------------------------- |
 | Docker   | $\textcolor{green}{\text{Mandatory}}$  | $\textcolor{red}{\text{Not required}}$          |
-| Node.js  | $\textcolor{red}{\text{Not required}}$ | $\textcolor{green}{\text{Mandatory (v24.15+)}}$ |
+| Node.js  | $\textcolor{red}{\text{Not required}}$ | $\textcolor{green}{\text{Mandatory (v26+)}}$ |
 | yarn     | $\textcolor{red}{\text{Not required}}$ | $\textcolor{green}{\text{Mandatory (v4+)}}$     |
 
 
@@ -86,13 +86,20 @@ Once the container is running, verify the site is working at the root path:
 
 1. **Docusaurus**: [localhost:3001](http://localhost:3001)
 
-> [!NOTE]
-> The Docusaurus server listens on port `3000` inside the container, and
-> Compose publishes it on host port `3001`.
-
 ## Native Setup
 
-Before you begin, ensure you have `Node.js (v24.15+)` and `yarn` installed on your system:
+> [!IMPORTANT]
+> This project uses latest Yarn version (v4). Also, recent Node releases no longer
+> bundle Corepack, so if `yarn --version` doesn't report a `4.x` version, install
+> it through Corepack:
+>
+> ```bash
+> npm install --global corepack@latest    # only needed when Corepack isn't available
+> corepack enable yarn
+> corepack install                        # installs the version pinned in `package.json`
+> ```
+
+Before you begin, ensure you have `Node.js (v26+)` and `yarn (v4+)` installed on your system:
 
 ```bash
 # Linux/MacOS
@@ -104,17 +111,6 @@ yarn --version
 node --version
 yarn --version
 ```
-
-> [!NOTE]
-> This project uses Yarn 4. Recent Node.js releases no longer bundle Corepack,
-> so if `yarn --version` doesn't report a `4.x` version, install it through
-> Corepack:
->
-> ```bash
-> npm install --global corepack@latest    # only needed when Corepack isn't available
-> corepack enable
-> corepack install                        # installs the version pinned in package.json
-> ```
 
 ### **1. Installing Dependencies**
 
@@ -146,7 +142,7 @@ yarn dev
 
 You can now verify the site is running at the root path:
 
-1. **Docusaurus**: [localhost:3000](http://localhost:3000)
+1. **Docusaurus**: [localhost:3001](http://localhost:3001)
 
 ---
 # Deployment

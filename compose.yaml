@@ -42,4 +42,3 @@ networks:
   cosmic-docs:
     name: cosmic_net
     driver: bridge
-    external: true

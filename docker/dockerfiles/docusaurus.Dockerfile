@@ -9,7 +9,7 @@ WORKDIR /app
 # doesn't need network access just to start.
 COPY ./package.json ./
 RUN npm install --global corepack@latest \
-    && corepack enable \
+    && corepack enable yarn \
     && corepack install
 
 
